@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "estrutura-projeto-dados"
+version = "0.1.0"
+description = "Como estruturar um projeto de dados"
+authors = ["Luiz Fernando <luizfsoliveira.lm@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.3"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
