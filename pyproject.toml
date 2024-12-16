@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.11.3"
+python = ">=3.9,<3.13"
 pandas = "^2.2.3"
 openpyxl = "^3.1.5"
 pytest = "^8.3.4"
