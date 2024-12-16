@@ -1,4 +1,4 @@
-name: ci
+name: CI
 on:
   push:
     branches: [ main ]
@@ -10,28 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9","3.10","3.11","3.12"]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - name: Copia os arquivos do repositório
+      - name: Copiar arquivos do repositório
         uses: actions/checkout@v4
 
-      - name: Instalar o Python  
+      - name: Instalar o Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version}} 
+          python-version: ${{ matrix.python-version }}
 
-      - name: Instalar Poetry
-        run: pip install -r requirements-test.txt
+      - name: Instalar o Poetry
+        uses: abatilo/actions-poetry@v2
+
+      - name: Instalar dependências
+        run: poetry install --no-root
 
       - name: Rodar os testes
-        run: pytest tests/test_unit.py
-
-      - name: Rodar os testes
-        run: echo hello world!        
-
-      - name: Segundo Passo
-        run: echo $(ls)
-
-      - name: Terceiro passo
-        run: echo $(pwd)
+        run: poetry run pytest
