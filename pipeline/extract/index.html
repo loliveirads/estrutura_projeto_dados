@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../transform/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Extract - Estrutura Projeto de Dados</title>
+        <title>Extração - Estrutura Projeto de Dados</title>
       
     
     
@@ -67,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#extracao-de-dados" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Extract
+              Extração
             
           </span>
         </div>
@@ -233,10 +242,67 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docs/pipeline/extract.md" class="md-nav__link">
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pipeline
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pipeline
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Extração
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -245,18 +311,57 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#funcao-de-extracao-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função de Extração de Dados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.pipeline.extract.extract_from_excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_from_excel
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../../docs/pipeline/transform.md" class="md-nav__link">
+      <a href="../transform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -268,15 +373,16 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../../docs/pipeline/load.md" class="md-nav__link">
+      <a href="../load/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -285,6 +391,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -326,6 +440,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#funcao-de-extracao-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função de Extração de Dados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.pipeline.extract.extract_from_excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_from_excel
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -343,10 +485,206 @@
   
 
 
-  <h1>Extract</h1>
+<h1 id="extracao-de-dados">Extração de Dados</h1>
+<p>A função <code>extract_from_excel</code> é responsável por ler múltiplos arquivos Excel e retorná-los como DataFrames.</p>
+<h2 id="funcao-de-extracao-de-dados">Função de Extração de Dados</h2>
 
-<p># Extração de Dados
-A função <code>extract_from_excel</code> é responsável por ler múltiplos arquivos Excel e retorná-los como DataFrames.</p>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="app.pipeline.extract.extract_from_excel"></a>
+    <div class="doc doc-contents first">
+
+        <p>Lê todos os arquivos Excel (.xlsx) em um diretório e retorna uma lista de DataFrames.</p>
+<p>Esta função utiliza o módulo <code>glob</code> para encontrar todos os arquivos com extensão <code>.xlsx</code>
+no diretório especificado. Em seguida, cada arquivo é lido usando o <code>pandas.read_excel</code> 
+e armazenado em uma lista de DataFrames.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O caminho do diretório contendo os arquivos Excel.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="pandas.DataFrame">DataFrame</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List[pd.DataFrame]: Uma lista de DataFrames, onde cada DataFrame representa </p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="pandas.DataFrame">DataFrame</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>o conteúdo de um arquivo Excel encontrado no diretório.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>from app.pipeline.extract import extract_from_excel
+data_frames = extract_from_excel("data/input")
+len(data_frames)
+3  # Se houver três arquivos Excel no diretório</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>FileNotFoundError</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Se o diretório especificado não existir.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>ValueError</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Se não houver arquivos Excel no diretório.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>app\pipeline\extract.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_from_excel</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Lê todos os arquivos Excel (.xlsx) em um diretório e retorna uma lista de DataFrames.</span>
+
+<span class="sd">    Esta função utiliza o módulo `glob` para encontrar todos os arquivos com extensão `.xlsx`</span>
+<span class="sd">    no diretório especificado. Em seguida, cada arquivo é lido usando o `pandas.read_excel` </span>
+<span class="sd">    e armazenado em uma lista de DataFrames.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): O caminho do diretório contendo os arquivos Excel.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List[pd.DataFrame]: Uma lista de DataFrames, onde cada DataFrame representa </span>
+<span class="sd">        o conteúdo de um arquivo Excel encontrado no diretório.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; from app.pipeline.extract import extract_from_excel</span>
+<span class="sd">        &gt;&gt;&gt; data_frames = extract_from_excel(&quot;data/input&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; len(data_frames)</span>
+<span class="sd">        3  # Se houver três arquivos Excel no diretório</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        FileNotFoundError: Se o diretório especificado não existir.</span>
+<span class="sd">        ValueError: Se não houver arquivos Excel no diretório.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">all_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;*.xlsx&quot;</span><span class="p">))</span>
+
+    <span class="n">data_frame_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">all_files</span><span class="p">:</span>
+        <span class="n">data_frame_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">data_frame_list</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
 
 
 
