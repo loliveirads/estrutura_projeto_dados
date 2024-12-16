@@ -437,14 +437,13 @@
 <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
 <p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
 <h2 id="workflow">Workflow</h2>
-<p>```mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph ETL[Pipeline]
     A(Múltiplos Arquivos Excel) --&gt; B[Extract: extract_from_excel]
     B[Extract: extract_from_excel] --&gt; |Gera uma lista de DataFrames| C[Transformation: consolidate_dataframes]
     C[Transformation: consolidate_dataframes] --&gt; |Gera um DataFrame Consolidado| D[Load: Converte para Excel]
     D[Load: Converte para Excel] --&gt; |Salva o consolidado em Excel| E[Pasta Output: Um arquivo Único Excel]
-  end</p>
+  end</code></pre>
 <h2 id="project-layout">Project layout</h2>
 <div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
 docs/
