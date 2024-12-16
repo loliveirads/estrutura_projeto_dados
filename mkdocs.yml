@@ -1,0 +1,36 @@
+site_name: Estrutura Projeto de Dados
+theme:
+    name: material  # Tema Material para MkDocs
+    palette:
+        primary: red
+    language: pt
+
+repo_name: "loliveirads/estrutura_projeto_dados"
+repo_url: "https://github.com/loliveirads/estrutura_projeto_dados"
+
+markdown_extensions:
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+    - pymdownx.highlight
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]  # Caminho relativo para o diretório raiz
+          options:
+            show_source: false
+
+
+nav:
+    - Home: index.md
+    - Pipeline:
+        - Extração: pipeline/extract.md
+        - Transformação: pipeline/transform.md
+        - Carregamento: pipeline/load.md
+    - Sobre: about.md
