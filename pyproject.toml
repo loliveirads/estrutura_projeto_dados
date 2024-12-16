@@ -28,4 +28,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.taskipy.tasks]
 test = "poetry run pytest -v"
 run = "poetry run python app/main.py"
-kill = "kill -9 $(lsof -t -i :8000)"
+kill = "for /f \"tokens=5\" %a in ('netstat -ano ^| findstr :8000') do taskkill /F /PID %a"
